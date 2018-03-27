@@ -4,9 +4,24 @@ def useDeploy = true
 
 stage(
     "Flow Check", {
-        try { println " TEST FLOW = $USE_TEST" useTest = "$USE_TEST" == "true" } catch (MissingPropertyException e) { println " TEST FLOW = true" }
-        try { println " BUILD FLOW = $USE_BUILD" useBuild = "$USE_BUILD" == "true" } catch (MissingPropertyException e) { println " BUILD FLOW = true" }
-        try { println " DEPLOY FLOW = $USE_DEPLOY" useBuild = "$USE_DEPLOY" == "true" } catch (MissingPropertyException e) { println " BUILD DEPLOY = true" }
+        try {
+            println " TEST FLOW = $USE_TEST"
+            useTest = "$USE_TEST" == "true"
+        } catch (MissingPropertyException e) {
+            println " TEST FLOW = true"
+        }
+        try {
+            println " BUILD FLOW = $USE_BUILD"
+            useBuild = "$USE_BUILD" == "true"
+        } catch (MissingPropertyException e) {
+            println " BUILD FLOW = true"
+        }
+        try {
+            println " DEPLOY FLOW = $USE_DEPLOY"
+            useBuild = "$USE_DEPLOY" == "true"
+        } catch (MissingPropertyException e) {
+            println " BUILD DEPLOY = true"
+        }
 })
 
 stage("Git CheckOut", {
