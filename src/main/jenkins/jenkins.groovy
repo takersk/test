@@ -22,7 +22,7 @@ node {
         sh "'${gradleHome}/bin/gradle' clean"
     }
 
-    if (skipTests != true) {
+    if (skipTests != "true") {
         stage('Test') {
             sh "'${gradleHome}/bin/gradle' test"
         }
