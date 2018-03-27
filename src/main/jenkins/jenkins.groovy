@@ -53,7 +53,7 @@ stage("Git CheckOut", {
 stage('Test') {
     if (useTest) { println "Test Started"
         try {
-            sh "${tool name: GRADLE_VERSION, type: 'hudson.plugins.gradle.GradleInstallation'}/bin/gradle test -Dorg.gradle.daemon=true"
+            sh "${tool name: 4.3, type: 'hudson.plugins.gradle.GradleInstallation'}/bin/gradle test -Dorg.gradle.daemon=true"
         } finally {
             junit allowEmptyResults: true, keepLongStdio: true, testResults: 'build/test-results/*.xml'
         }
