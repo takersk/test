@@ -28,17 +28,16 @@ stage("Git CheckOut", {
     if (useTest || useBuild)
         {
             println "Git CheckOut Started"
-            checkout
-                (
-                    [
-                            $class : 'GitSCM',
-                            branches : [[name: '${BRANCH_SELECTOR}']],
-                            doGenerateSubmoduleConfigurations: false,
-                            extensions : [],
-                            submoduleCfg : [],
-                            userRemoteConfigs : [[url: '${GIT_URL']]
-                    ]
-                ) println "Git CheckOut End"
+            checkout (
+                [
+                        $class : 'GitSCM',
+                        branches : [[name: '${BRANCH_SELECTOR}']],
+                        doGenerateSubmoduleConfigurations: false,
+                        extensions : [],
+                        submoduleCfg : [],
+                        userRemoteConfigs : [[url: '${GIT_URL']]
+                ]
+            ) println "Git CheckOut End"
         } else {
             println "Git CheckOut Skip"
         }
