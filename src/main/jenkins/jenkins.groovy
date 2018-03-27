@@ -12,6 +12,8 @@ node {
     stage('Preparation') {
         echo "Current workspace : ${workspace}"
         gradleHome = tool 'gradle-4.3'
+        echo "gradle home : ${gradleHome}"
+        echo "skipTests : ${skipTests}"
     }
     stage('Checkout') {
         checkout scm
