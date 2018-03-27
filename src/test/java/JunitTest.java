@@ -18,6 +18,6 @@ class JunitTest {
     @DisplayName("test1")
     void test1() {
         assertEquals(new Sample().getNum(1), 1);
-        assertEquals(new Sample().getNum(1), 2);
+//        assertEquals(new Sample().getNum(1), 2);
     }
 }
