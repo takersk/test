@@ -40,7 +40,8 @@ stage("Git CheckOut", {
                     ]
                 ) println "Git CheckOut End"
         } else {
-            println "Git CheckOut Skip" }
+            println "Git CheckOut Skip"
+        }
 })
 
 stage('Test') {
