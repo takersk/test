@@ -25,7 +25,7 @@ node {
             sh "'${gradleHome}/bin/gradle' test"
         }
         stage('Store Test Results') {
-            junit '**/target/surefire-reports/TEST-*.xml'
+            junit allowEmptyResults: true, keepLongStdio: true, testResults: 'build/test-results/*.xml'
         }
     }
 
